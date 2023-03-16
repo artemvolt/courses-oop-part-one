@@ -46,7 +46,7 @@ interface BoundedStackInterface
     // постусловие: возвращает статус STATUS_PICK_*
     public function getStatusPick(): int;
 
-    // постусловие: очищает элементы и возвращает статусы методов push, pick, pop в неиспользованное состояние
+    // постусловие: очищает элементы и устанавливает статусы методов push, pick, pop в неиспользованное состояние
     // статус создания выставляется в SUCCESS
     public function clear(): void;
 
