@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 interface BoundedStackInterface
 {
-    public const STATUS_CREATE_SUCCESS = 2;
-    public const STATUS_CREATE_ERROR_MAX_SIZE_ITEMS = 3;
+    public const STATUS_CREATE_SUCCESS = 1;
+    public const STATUS_CREATE_ERROR_MAX_SIZE_ITEMS = 2;
 
     public const STATUS_PUSH_NEVER_USE = 1;
     public const STATUS_PUSH_ERROR_MAX_SIZE_ITEMS = 2;
