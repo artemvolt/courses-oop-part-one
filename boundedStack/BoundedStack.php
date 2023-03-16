@@ -72,9 +72,10 @@ class BoundedStack implements BoundedStackInterface
     {
         $stack = new self();
         $stack->statusPush = self::STATUS_PUSH_NEVER_USE;
-        $stack->statusCreate = self::STATUS_CREATE_ERROR_MAX_SIZE_ITEMS;
         $stack->statusPop = self::STATUS_POP_NEVER_USE;
         $stack->statusPick = self::STATUS_PICK_NEVER_USE;
+
+        $stack->statusCreate = self::STATUS_CREATE_ERROR_MAX_SIZE_ITEMS;
         if (count($items) <= $maxElements) {
             $stack->statusCreate = self::STATUS_CREATE_SUCCESS;
             $stack->items = $items;
