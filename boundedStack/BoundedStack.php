@@ -4,6 +4,21 @@ declare(strict_types=1);
 
 interface BoundedStackInterface
 {
+    public const STATUS_CREATE_SUCCESS = 2;
+    public const STATUS_CREATE_ERROR_MAX_SIZE_ITEMS = 3;
+
+    public const STATUS_PUSH_NEVER_USE = 1;
+    public const STATUS_PUSH_ERROR_MAX_SIZE_ITEMS = 2;
+    public const STATUS_PUSH_SUCCESS = 3;
+
+    public const STATUS_POP_NEVER_USE = 1;
+    public const STATUS_POP_ERROR_EMPTY_LIST = 2;
+    public const STATUS_POP_SUCCESS = 3;
+
+    public const STATUS_PICK_NEVER_USE = 1;
+    public const STATUS_PICK_ERROR_EMPTY_LIST = 2;
+    public const STATUS_PICK_SUCCESS = 3;
+
     // предусловие: кол-во элементов не должно превышать максимальное количество
     public static function create(array $items, int $maxElements): static;
 
@@ -41,21 +56,6 @@ interface BoundedStackInterface
 
 class BoundedStack implements BoundedStackInterface
 {
-    public const STATUS_CREATE_SUCCESS = 2;
-    public const STATUS_CREATE_ERROR_MAX_SIZE_ITEMS = 3;
-
-    public const STATUS_PUSH_NEVER_USE = 1;
-    public const STATUS_PUSH_ERROR_MAX_SIZE_ITEMS = 2;
-    public const STATUS_PUSH_SUCCESS = 3;
-
-    public const STATUS_POP_NEVER_USE = 1;
-    public const STATUS_POP_ERROR_EMPTY_LIST = 2;
-    public const STATUS_POP_SUCCESS = 3;
-
-    public const STATUS_PICK_NEVER_USE = 1;
-    public const STATUS_PICK_ERROR_EMPTY_LIST = 2;
-    public const STATUS_PICK_SUCCESS = 3;
-
     protected int $statusCreate;
     protected int $statusPush;
     protected int $statusPop;
